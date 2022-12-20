@@ -1,0 +1,12 @@
+.button{
+	-fx-background-color: "#FFD1C7";
+	-fx-background-radius: 5em;
+	-fx-font-size: 12px;
+}
+.root{
+	-fx-background-color: "white";
+}
+#pacMan{
+	-fx-fill: "#afd8ff";
+	-fx-stroke: #afd8ff;
+}
