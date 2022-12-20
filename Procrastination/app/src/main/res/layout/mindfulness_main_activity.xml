@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C1DDD6">
+
+    <TextView
+        android:id="@+id/mindfulness_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/mindfulness_title"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/mindfulness_big_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mindfulness_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/mindfulness_sound"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_title" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/mindfulness_sound"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_sound">
+
+        <RadioGroup
+            android:id="@+id/mindfulness_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mindfulness_no_talk"
+                android:layout_width="@dimen/mindfulness_radio_button_width"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="@string/mindfulness_no_talk"
+                android:textAlignment="center"
+                />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="?android:attr/listDivider" />
+
+            <RadioButton
+                android:id="@+id/mindfulness_body_scan"
+                android:layout_width="@dimen/mindfulness_radio_button_width"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="@string/minfulness_body_scan"
+                android:textAlignment="center"/>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="?android:attr/listDivider" />
+
+            <RadioButton
+                android:id="@+id/mindfulness_breath"
+                android:layout_width="@dimen/mindfulness_radio_button_width"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="@string/mindfulness_breath"
+                android:textAlignment="center"/>
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/mindfulness_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/mindfulness_time"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+    <Button
+        android:id="@+id/mindfulness_time_button"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/mindfulness_control_botton"
+        android:text=""
+        android:textSize="@dimen/mindfulness_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_time_tv"
+        tools:text="0 小時 0 分鐘"/>
+    <TextView
+        android:id="@+id/mindfulness_alarm_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/mindfulness_alarm"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_time_button" />
+    <Button
+        android:id="@+id/mindfulness_alarm_button"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/mindfulness_control_botton"
+        android:text=""
+        android:textSize="@dimen/mindfulness_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_alarm_tv"
+        tools:text="開始  開啟   |   結束  開啟"/>
+
+    <Button
+        android:id="@+id/mindfulness_check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="@string/mindfulness_check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_main">
+    <fragment
+        android:id="@+id/nav_ips"
+        android:name="com.e.procrastination.IPSScrollingActivity"
+        android:label="ips_main_activity"
+        tools:layout="@layout/ips_main_activity" >
+        <action
+            android:id="@+id/action_IPSScrollingActivity_to_mainActivity"
+            app:destination="@id/nav_main" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_mindfulness"
+        android:name="com.e.procrastination.MindfulnessMainActivity"
+        android:label="MindfulnessMainActivity" >
+        <action
+            android:id="@+id/action_mindfulnessMainActivity_to_mainActivity"
+            app:destination="@id/nav_main" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_main"
+        android:name="com.e.procrastination.MyMainActivity"
+        android:label="MainActivity" >
+        <action
+            android:id="@+id/action_mainActivity_to_IPSScrollingActivity"
+            app:destination="@id/nav_ips" />
+        <action
+            android:id="@+id/action_mainActivity_to_mindfulnessMainActivity"
+            app:destination="@id/nav_mindfulness" />
+    </fragment>
+</navigation>

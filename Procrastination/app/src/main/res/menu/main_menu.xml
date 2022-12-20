@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sidebar_profile"
+            android:title="@string/sidebar_profile"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/sidebar_course_record"
+            android:title="@string/sidebar_course_record"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/sidebar_diary"
+            android:title="@string/sidebar_diary"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/sidebar_ips"
+            android:title="@string/sidebar_ips"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/sidebar_mindfulness"
+            android:title="@string/sidebar_mindfulness"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/sidebar_mindfulness_record"
+            android:title="@string/sidebar_mindfulness_record"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/sidebar_mood_record"
+            android:title="@string/mood_record"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/sidebar_logout"
+            android:title="@string/logout"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

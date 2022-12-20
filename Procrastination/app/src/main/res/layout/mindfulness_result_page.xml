@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/mindfulness_result_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/mindfulness_result_page_recording"
+        android:textSize="@dimen/mindfulness_big_title"
+        android:textColor="@color/aquamarine_dark"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mindfulness_result_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text=""
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_title"
+        tools:text="2022/06/01 15:00" />
+
+    <TextView
+        android:id="@+id/mindfulness_result_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text=""
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_posture_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_date"
+        tools:text="15分鐘" />
+
+    <TextView
+        android:id="@+id/mindfulness_result_posture_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="姿勢紀錄"
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_posture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_time" />
+
+    <EditText
+        android:id="@+id/mindfulness_result_posture"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="@drawable/input_blank"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_memo_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_posture_tv" />
+
+    <TextView
+        android:id="@+id/mindfulness_result_memo_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/mindfulness_result_memo"
+        android:textSize="@dimen/mindfulness_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_memo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_posture" />
+
+    <EditText
+        android:id="@+id/mindfulness_result_memo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="@drawable/input_blank"
+        app:layout_constraintBottom_toTopOf="@+id/mindfulness_result_sure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_memo_tv" />
+
+    <Button
+        android:id="@+id/mindfulness_result_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/mundfulness_result_ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mindfulness_result_memo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
