@@ -1,6 +1,3 @@
-## Descrete Math
-Note : https://hackmd.io/@bacon-cy/rkdtr6Uxj
-
 ## Linear Algebra
 Note : https://hackmd.io/@bacon-cy/rJqCwQkg9
 
@@ -37,3 +34,9 @@ Note : https://hackmd.io/@bacon-cy/HywNyxA-i
 - decimal to binary converter
 - casear encryption and decryption
 - others...(few hw of PD1)
+
+## Digital System 數位系統導論
+Note : https://hackmd.io/MNceTEiCSQ6bYNxBAkybdw
+
+## Descrete Math
+Note : https://hackmd.io/@bacon-cy/rkdtr6Uxj
