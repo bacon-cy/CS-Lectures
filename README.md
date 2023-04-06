@@ -1,12 +1,12 @@
------
-`     _________     ______       _____      _________    ___      ___      _________   ` <br>
-`    /  ____ __/  /  ___   /   /  ___  \   /__   ___/   /    \   /  /    ༼   _______/  ` <br>
-`   /  /         /  /  /  /   /  /  /  /     /  /      /  /\  \ |  /    /  /   _____   ` <br>
-`  /  /__ __    /  /__/  /   /  /__/  /   __/  /___   /  /  \  \|  |   |  /___/    /   ` <br>
-` /__ __ _ _/  / _____  /   /_ _ _ _ ╯  /__   _ __/  /__/    \____/    \____ _ _ _/    ` <br>
+## Descrete Math
+Note : https://hackmd.io/@bacon-cy/rkdtr6Uxj
 
------ 
+## Linear Algebra
+Note : https://hackmd.io/@bacon-cy/rJqCwQkg9
+
 ## Data Structure
+Note : https://hackmd.io/@bacon-cy/HywNyxA-i
+
 - Prefix, Postfix, Infix
 - min Heap
   - insert x : Add a new node, which value is x into the min heap.
