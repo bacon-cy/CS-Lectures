@@ -56,7 +56,15 @@ void cache_sim_t::init()
   write_misses = 0;
   bytes_written = 0;
   writebacks = 0;
-
+  //TODO : vict is going to count the victim number, if not enough vict then give the right number
+  vict = new size_t[sets]();
+  //TODO
+  // remark the 0th way index is the starting point, way index is from 1 to `ways` 
+  front_way_idx = new size_t[sets*(ways+1)]();
+  back_way_idx = new size_t[sets*(ways+1)]();
+  last_way = new size_t[sets]();
+  for (size_t i=0;i<sets;i++)	
+	back_way_idx[i*(ways+1)]=1;
   miss_handler = NULL;
 }
 
@@ -107,6 +115,16 @@ uint64_t* cache_sim_t::check_tag(uint64_t addr)
 
   for (size_t i = 0; i < ways; i++)
     if (tag == (tags[idx*ways + i] & ~DIRTY))
+	  //TODO : add the sets*way + way into back
+      //UPDATE the adjancency lists
+	  //ex. accessed `way` is 4, and 5 is after 4. The last one is 7
+	  size_t _=idx*(ways+1);
+	  front_way_idx[ _+back_way_idx[_+way] ] = front_way_idx[_+way]; //f[b[4]]= f[5] = f[4]
+	  back_way_idx[ _+front_way_idx[_+way] ] = back_way_idx[_+way]; //b[f[4]]= 5
+	  front_way_idx[ _+way ] = last_way[idx]; //f[4] = 7
+	  back_way_idx[ _+last_way[idx] ] = way; // b[7] = 4
+	  back_way_idx[ _+way ] = -1;
+	  
       return &tags[idx*ways + i];
 
   return NULL;
@@ -114,8 +132,28 @@ uint64_t* cache_sim_t::check_tag(uint64_t addr)
 
 uint64_t cache_sim_t::victimize(uint64_t addr)
 {
+  // idx, way : the idx(set) and way for the new data to be cache
   size_t idx = (addr >> idx_shift) & (sets-1);
-  size_t way = lfsr.next() % ways;
+
+  //TODO : victim the least recently used one
+  //remark : idx is from 1 to `ways`
+  size_t _=idx*(ways+1);
+  size_t way = 0;
+  if(vict[idx]<ways){
+	way = vict[idx];
+	vict[idx]++;
+    front_way_idx[ _+way ] = last_way[idx]; //f[4] = 7
+	back_way_idx[ _+last_way[idx] ] = way; // b[7] = 4
+  }else{
+	   way =  back_way_idx[_+0] % ways;
+	  //UPDATE the adjancency lists
+	  //ex. victim `way` is 4, and 5 is after 4. The last one is 7
+	  front_way_idx[ _+back_way_idx[_+way] ] = 0; //f[b[4]]= f[5]=0
+	  back_way_idx[ _+0 ] = back_way_idx[_+way]; //b[0]= 5
+	  front_way_idx[ _+way ] = last_way[idx]; //f[4] = 7
+	  back_way_idx[ _+last_way[idx] ] = way; // b[7] = 4
+	  back_way_idx[ _+way ] = -1;
+  }
   uint64_t victim = tags[idx*ways + way];
   tags[idx*ways + way] = (addr >> idx_shift) | VALID;
   return victim;
@@ -201,7 +239,16 @@ uint64_t fa_cache_sim_t::victimize(uint64_t addr)
   if (tags.size() == ways)
   {
     auto it = tags.begin();
-    std::advance(it, lfsr.next() % ways);
+	size_t way =  back_way_idx[0] % ways;
+	//UPDATE the adjancency lists
+	//ex. victim `way` is 4, and 5 is after 4. The last one is 7
+	front_way_idx[ back_way_idx[way] ] = 0; //f[b[4]]= f[5]=0
+	back_way_idx[ 0 ] = back_way_idx[way]; //b[0]= 5
+	front_way_idx[ way ] = last_way[idx]; //f[4] = 7
+	back_way_idx[ last_way[idx] ] = way; // b[7] = 4
+	back_way_idx[ way ] = -1;
+	uint64_t victim = tags[way];
+    std::advance(it, victim);
     old_tag = it->second;
     tags.erase(it);
   }
