@@ -36,7 +36,7 @@ while pointer > 0:
             output_list.append(input_string[pointer - 1])  # if there is none of word end with input_string[pointer - 1],
             # let add the character to the output list anyway
             pointer -= 1
-output_list.reverse()  # since we use BMM, reverse the output list
 
 # output the result #
+output_list.reverse()  # since we use BMM, reverse the output list
 print(output_list)
