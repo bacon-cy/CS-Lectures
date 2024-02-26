@@ -1,3 +1,6 @@
+## NLP
+Word Segmentation for Chinese NLP : using BMM
+
 ## Linear Algebra
 Note : https://hackmd.io/@bacon-cy/rJqCwQkg9
 
